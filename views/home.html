@@ -1,0 +1,31 @@
+<div class="well well-sm">
+    <div style="text-align:right;padding:0px;">
+        <div class="container">
+            <span class="pull-left" style="padding:10px;font-size:28px;"><strong>Shopping Cart</strong></span>
+            <button class="btn btn-default btn-lg btn-link" style="font-size:36px;">
+                <a href="#/cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+            </button>
+            <span  class="badge badge-notify" ng-bind="cartvalue"></span>
+        </div>
+    </div>
+</div>
+<div id="products" class="row list-group">
+    <div ng-repeat="product in dummyproducts" class="item  col-sm-4 col-md-4 col-xs-4 col-lg-4">
+        <div class="thumbnail" style="height: 400px;">
+            <img class="group list-group-image col-xs-12 col-md-12 col-sm-12 col-lg-12" style="height:60%;" ng-src="{{refresh_cache(product.product_url)}}" alt="" />
+            <div class="caption">
+                <h4 class="group inner list-group-item-heading" ng-bind="product.product_title"></h4>
+                <p class="group inner list-group-item-text" ng-bind="product.product_desc"></p>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <p class="lead">$ <span ng-bind="product.product_price"></span></p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <a class="btn btn-success" href="" ng-click="addtocart(product.product_id)">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- {{cart}}        -Uncomment to list all the cart Items -->
+</div>
